@@ -11,7 +11,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    @product = Product.create(product_params)
+    if @user.save
+      redirect_to :back, notice: "User added!"
+    else
+      redirect_to :back, notice: "User not added!"
+    end
   end
 
   def show

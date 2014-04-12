@@ -1,5 +1,8 @@
-
-<h1>Hello world!</h1>
-
-
+<div class="img-container">
+    <ul class="row">
+      <% Product.all.each do |product| %>
+          <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><%= image_tag product.pic(:medium), :class => 'img-responsive' %><%= "#{product.name}: " "$#{product.price}" %></li>
+      <% end %>
+    </ul>
+</div>
 

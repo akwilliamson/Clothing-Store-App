@@ -14,6 +14,31 @@
  */
 @import 'bootstrap';
 
+
+  ul.row {
+      padding:0 0 0 0;
+      margin:0 0 0 0;
+  }
+  ul.row li {
+      list-style:none;
+      margin-bottom:25px;
+  }
+  ul.row li img {
+      cursor: pointer;
+  }
+
+  .controls{
+      width:50px;
+      display:block;
+      font-size:11px;
+      padding-top:8px;
+      font-weight:bold;
+  }
+  .next {
+      float:right;
+      text-align:right;
+  }
+
 @import url("//fonts.googleapis.com/css?family=Ubuntu");/*!
  * Bootswatch v3.1.1+1
  * Homepage: http://bootswatch.com
