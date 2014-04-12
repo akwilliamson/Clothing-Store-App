@@ -5,12 +5,15 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_name(params[:name])
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password]) && @user.admin != nil
       session[:user_id] = @user.id
-      redirect_to user_path, notice: "Logged in!"
+      redirect_to users_path, notice: "Logged in!"
+    elsif @user && @user.authenticate(params[:password]) && @user.admin == nil
+      session[:user_id] = @user.id
+      redirect_to new_product_path, notice: "Logged in!"
     else
       flash.alert = "user name or password is invalid."
-      render 'index'
+      render 'products/index'
     end
   end
 

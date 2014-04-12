@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
+    @user = User.new
+    @product = Product.new
   end
 
   def new
@@ -8,6 +11,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    @product = Product.create(product_params)
   end
 
   def show
